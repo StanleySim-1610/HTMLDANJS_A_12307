@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Basic - 12307</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul class="menu">
+      <li><a href="HtmlCssBasic_A_12307.html" onclick="return confirm('Apakah Anda yakin ingin kembali ke Halaman Utama?');">Kembali ke Halaman Utama</a></li>
+      <li><a href="HtmlForm_A_12307.html" onclick="return confirm('Apakah Anda yakin ingin membuka Halaman Form?');">Halaman Form</a></li>
+  </ul>
+
+  <h2>Belajar JavaScript Fundamental</h2>
+
+  <div class="card">
+    <h3>Manipulasi Teks</h3>
+    <p id="teks">Teks ini bisa berubah!</p>
+    <button onclick="ubahBiru()">Ubah ke Biru</button>
+    <button onclick="ubahMerah()">Ubah ke Merah</button>
+    <button onclick="ubahHijau()">Ubah ke Hijau</button>
+  </div>
+
+  <div class="card">
+    <h3>Input Nama</h3>
+    <input type="text" id="inputNama" placeholder="Ketik namamu...">
+    <button onclick="tampilkanNama()">Tampilkan</button>
+    <p id="output"></p>
+  </div>
+
+  <div class="card">
+    <h3>Hitung Kuadrat</h3>
+    <input type="number" id="angka" placeholder="Masukkan angka...">
+    <button onclick="hitungKuadrat()">Hitung</button>
+    <p id="hasil"></p>
+  </div>
+
+  <script>
+    // Fungsi untuk mengubah teks menjadi biru
+    function ubahBiru() {
+      var paragraf = document.getElementById("teks");
+      paragraf.innerHTML = "Teks sudah berubah menjadi biru!";
+      paragraf.style.color = "blue";
+    }
+
+    // Fungsi untuk mengubah teks menjadi merah
+    function ubahMerah() {
+      var paragraf = document.getElementById("teks");
+      paragraf.innerHTML = "Sekarang teks berwarna merah!";
+      paragraf.style.color = "red";
+    }
+
+    // Fungsi untuk mengubah teks menjadi hijau
+    function ubahHijau() {
+      var paragraf = document.getElementById("teks");
+      paragraf.innerHTML = "Sekarang teks berwarna hijau!";
+      paragraf.style.color = "green";
+    }
+
+    // Fungsi untuk menampilkan nama
+    function tampilkanNama() {
+      var nama = document.getElementById("inputNama").value;
+      if (nama.trim() === "") {
+        alert("Silakan isi nama dulu.");
+      } else {
+        alert("Halo, " + nama + "! Selamat Belajar HTML & JS :D");
+      }
+    }
+
+    // Fungsi untuk menghitung kuadrat
+    function hitungKuadrat() {
+      var angka = document.getElementById("angka").value;
+      var hasil = document.getElementById("hasil");
+      if (angka.trim() === "") {
+        hasil.innerHTML = "Masukkan angka terlebih dahulu.";
+      } else {
+        var kuadrat = Math.pow(Number(angka), 2);
+        hasil.innerHTML = "Hasil kuadrat dari " + angka + " adalah " + kuadrat;
+      }
+    }
+  </script>
+</body>
+</html>
